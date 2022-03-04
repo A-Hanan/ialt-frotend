@@ -6,6 +6,12 @@ const PrivateRoute = () => {
   const userstate = useSelector((state) => state.loginUserReducer);
   const { currentUser } = userstate;
 
-  return currentUser ? <Outlet /> : <Navigate to="/login" />;
+  return currentUser && currentUser.verified ? (
+    <Outlet />
+  ) : !currentUser ? (
+    <Navigate to="/login" />
+  ) : (
+    <Navigate to="/account" />
+  );
 };
 export default PrivateRoute;

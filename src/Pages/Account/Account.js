@@ -89,13 +89,23 @@ const Account = () => {
           console.log("profile ", currentObject);
           localStorage.setItem("currentUser", JSON.stringify(currentObject));
           setShowUploadButton(false);
-   
         })
         .catch((err) => console.log("error from uploading profile", err));
     }
   };
   return (
     <div className="account__page">
+      <div
+        className={
+          currentUser && !currentUser.verified
+            ? "nav__verification__info show"
+            : "nav__verification__info"
+        }
+      >
+        <p>
+          Your account is not verified. verify it to perform all operations.{" "}
+        </p>
+      </div>
       <div className="account__page__user__info">
         {/* <img
           className="profile__image"

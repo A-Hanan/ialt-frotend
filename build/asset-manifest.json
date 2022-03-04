@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.442059b3.css",
-    "main.js": "./static/js/main.5510dde7.js",
+    "main.css": "./static/css/main.9f500a97.css",
+    "main.js": "./static/js/main.487c0ec1.js",
     "static/js/787.592de070.chunk.js": "./static/js/787.592de070.chunk.js",
     "static/media/happyMan5.jpg": "./static/media/happyMan5.3edc227e5690a39ed9de.jpg",
     "static/media/happyMan2.jpg": "./static/media/happyMan2.8b9fcf40fa07b3f62ca3.jpg",
@@ -72,12 +72,12 @@
     "static/media/poppins-v5-latin-800.woff2": "./static/media/poppins-v5-latin-800.6585ae8392bb122f8a68.woff2",
     "static/media/poppins-v5-latin-900.woff2": "./static/media/poppins-v5-latin-900.4c9cf88341d7f0ccc220.woff2",
     "index.html": "./index.html",
-    "main.442059b3.css.map": "./static/css/main.442059b3.css.map",
-    "main.5510dde7.js.map": "./static/js/main.5510dde7.js.map",
+    "main.9f500a97.css.map": "./static/css/main.9f500a97.css.map",
+    "main.487c0ec1.js.map": "./static/js/main.487c0ec1.js.map",
     "787.592de070.chunk.js.map": "./static/js/787.592de070.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.442059b3.css",
-    "static/js/main.5510dde7.js"
+    "static/css/main.9f500a97.css",
+    "static/js/main.487c0ec1.js"
   ]
 }

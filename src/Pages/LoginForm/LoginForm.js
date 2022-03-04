@@ -86,7 +86,6 @@ const FormPage = () => {
         Object.keys(signupErrors).length === 0 &&
         signupErrors.constructor === Object
       ) {
-        alert("signup in");
         var pass = AES.encrypt(
           signupCredentials.password,
           "IAMLUCKYTICKET"
@@ -96,7 +95,7 @@ const FormPage = () => {
           email: signupCredentials.email,
           pass,
         };
-        dispatch(registerUser(user));
+        dispatch(registerUser(user,navigate));
       }
     }, 100);
   };

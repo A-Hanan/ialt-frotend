@@ -15,15 +15,26 @@ const Navbar2 = ({ showLoading }) => {
   const [showHostRaffleMenu, setShowHostRaffleMenu] = useState(false);
   const userstate = useSelector((state) => state.loginUserReducer);
   const { currentUser } = userstate;
+  const [vfBox, showVfBox] = useState(false);
   const [currentPath, setCurrentPath] = useState(
     window.location.pathname.split("/")[1]
   );
   const dispatch = useDispatch();
-  useEffect(() => {}, [window.location.pathname, currentUser]);
+  useEffect(() => {
+    console.log("current user>>> ", currentUser);
+  }, [window.location.pathname, currentUser]);
   useEffect(
     () => setCurrentPath(window.location.pathname.split("/")[1]),
     [window.location.pathname]
   );
+  const showVerificationBox = () => {
+    if (!currentUser.verified) {
+      showVfBox(true);
+      setInterval(() => {
+        showVfBox(false);
+      }, 5000);
+    }
+  };
 
   return (
     <>
@@ -185,10 +196,16 @@ const Navbar2 = ({ showLoading }) => {
             </div>
           </div>
           {/* add class show to nav verifiaction info */}
-          <div className="nav__verification__info">
+          {/* <div
+            className={
+              currentUser && !currentUser.verified
+                ? "nav__verification__info show"
+                : "nav__verification__info"
+            }
+          >
             <p>Your account is not verified. </p>
             <button>Verify now</button>
-          </div>
+          </div> */}
         </>
       )}
     </>

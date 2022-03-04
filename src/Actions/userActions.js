@@ -1,5 +1,15 @@
 import api from "../utils/api";
-export const registerUser = (user) => async (dispatch) => {
+import Swal from "sweetalert2";
+
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: "btn btn-success",
+    cancelButton: "btn btn-danger",
+  },
+  buttonsStyling: false,
+});
+
+export const registerUser = (user, navigate) => async (dispatch) => {
   dispatch({ type: "USER_REGISTER_REQUEST" });
   console.log("user at userActions >>> ", user);
   try {
@@ -8,9 +18,16 @@ export const registerUser = (user) => async (dispatch) => {
       console.log("response at register>>>", response);
     }, 1000);
     dispatch({ type: "USER_REGISTER_SUCCESS", payload: response.data });
+    Swal.fire("Registered Successfully!", "Click to Login", "success");
+    window.location.reload();
   } catch (error) {
     dispatch({ type: "USER_REGISTER_FAILED", payload: error });
     console.log("error at register>>>", error);
+    swalWithBootstrapButtons.fire(
+      "Registeration Unsuccessful!",
+      "Something goes wrong",
+      "error"
+    );
   }
 };
 

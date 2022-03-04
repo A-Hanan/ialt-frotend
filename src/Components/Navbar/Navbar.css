@@ -214,10 +214,9 @@ button > .MuiSvgIcon-root {
   display: none;
 }
 .nav__verification__info.show {
-  position: fixed;
+  position: relative;
   height: 8vh;
-  top: 10vh;
-  left: 0;
+
   width: 100vw;
   margin: 0;
   padding: 5px;
@@ -225,7 +224,7 @@ button > .MuiSvgIcon-root {
   justify-content: center;
   align-items: center;
   background-color: rgb(198, 255, 198);
-  z-index: 10000000000000000000;
+  margin-bottom: 3vh;
 }
 .nav__verification__info > p {
   height: 100%;

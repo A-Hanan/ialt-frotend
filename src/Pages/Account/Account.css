@@ -1,5 +1,5 @@
 .account__page {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -9,7 +9,7 @@
 
 .account__page__user__info {
   width: 50%;
-  min-height: 40vh;
+  min-height: 50vh;
 
   display: flex;
   flex-direction: column;
@@ -67,6 +67,7 @@
   padding: 10px 8px;
   margin: 10px;
   width: 60%;
+  min-height: 50px !important;
 }
 .account__verification__container > div > button {
   background: var(--first-color);
