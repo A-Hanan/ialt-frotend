@@ -39,20 +39,16 @@ const CategoryBar = ({ setCategory }) => {
         options={{
           rewind: true,
           width: "90%",
-          gap: "0.5rem",
-          perPage: 6,
+          // gap: "0.5rem",
+          perPage: 5,
           interval: 5000,
 
           breakpoints: {
             768: {
-              perPage: 3,
-              interval: 3000,
-              gap: "0.3rem",
-              width: "95%",
-            },
-            380: {
               perPage: 2,
-              width: "98%",
+              interval: 3000,
+              // gap: "0.3rem",
+              width: "95%",
             },
           },
         }}

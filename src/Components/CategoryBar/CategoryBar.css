@@ -5,6 +5,7 @@
   border-bottom: 1px solid lightgray;
   background-color: var(--first-color);
   margin-top: -34px;
+  min-height: 40px;
 }
 
 .category__bar .splide {
@@ -31,8 +32,9 @@
   width: max-content !important;
   height: 10vh;
 }
+
 .category__bar .splide__slide > h1 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: white;
   font-style: inherit;
   display: flex;
@@ -47,7 +49,7 @@
   color: black !important ;
   display: inline !important;
   fill: black;
-  size: 0.9rem;
+  size: 0.7rem;
 }
 
 .category__bar .splide__arrow--prev svg {
@@ -73,15 +75,24 @@
   .category__bar .splide__slide > h1 {
     font-size: 0.8rem;
   }
+  .category__bar .splide {
+    height: 7vh;
+    min-height: 40px;
+  }
+
   .category__bar .splide__arrow--next svg {
     transform: scaleX(1) translateX(10px) !important;
     color: black !important;
     display: inline !important;
     font-size: 0.7rem !important;
   }
+  .category__bar .splide__arrow--next svg {
+    transform: scaleX(1) translateX(30px) !important;
+    font-size: 0.7rem !important;
+  }
 }
 @media (min-width: 768px) {
   .category__bar .splide__arrow--next svg {
-    font-size: 0.8rem !important;
+    font-size: 0.7rem !important;
   }
 }

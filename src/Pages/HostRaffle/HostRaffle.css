@@ -36,3 +36,8 @@
   border: none;
   width: 50%;
 }
+@media (max-width: 768px) {
+  .host__raffle__info {
+    margin-top: 13vh;
+  }
+}

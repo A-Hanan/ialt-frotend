@@ -99,12 +99,19 @@ const Navbar2 = ({ showLoading }) => {
             >
               <ul>
                 <li>
-                  <NavLink to="/search-raffles">Search Raffles</NavLink>
+                  <NavLink
+                    to="/search-raffles"
+                    onClick={(e) => setShowNav(false)}
+                  >
+                    Search Raffles
+                  </NavLink>
                 </li>
                 <li>
                   <NavLink
                     to="#"
-                    onClick={() => setShowHostRaffleMenu(!showHostRaffleMenu)}
+                    onClick={() => {
+                      setShowHostRaffleMenu(!showHostRaffleMenu);
+                    }}
                   >
                     Host a Raffle
                   </NavLink>
@@ -119,31 +126,57 @@ const Navbar2 = ({ showLoading }) => {
                   }
                 >
                   <li>
-                    <NavLink to="/host-raffle/create">Create Raffle</NavLink>
+                    <NavLink
+                      to="/host-raffle/create"
+                      onClick={(e) => setShowNav(false)}
+                    >
+                      Create Raffle
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/host-raffle/live">Live Raffles</NavLink>
+                    <NavLink
+                      to="/host-raffle/live"
+                      onClick={(e) => setShowNav(false)}
+                    >
+                      Live Raffles
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/host-raffle/pending">Pending Raffles</NavLink>
+                    <NavLink
+                      to="/host-raffle/pending"
+                      onClick={(e) => setShowNav(false)}
+                    >
+                      Pending Raffles
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/host-raffle/ended">Ended Raffles</NavLink>
+                    <NavLink
+                      to="/host-raffle/ended"
+                      onClick={(e) => setShowNav(false)}
+                    >
+                      Ended Raffles
+                    </NavLink>
                   </li>
                 </div>
 
                 <li>
-                  <NavLink to="/winners">Winners</NavLink>
+                  <NavLink to="/winners" onClick={(e) => setShowNav(false)}>
+                    Winners
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/account">Account</NavLink>
+                  <NavLink to="/account" onClick={(e) => setShowNav(false)}>
+                    Account
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/tickets">Tickets</NavLink>
+                  <NavLink to="/tickets" onClick={(e) => setShowNav(false)}>
+                    Tickets
+                  </NavLink>
                 </li>
-                <li>
-                  <NavLink to="/about">About</NavLink>
-                </li>
+                {/* <li>
+                  <NavLink to="/about" onClick={(e) => setShowNav(false)}>About</NavLink>
+                </li> */}
               </ul>
               <div onClick={dispatch(logoutUser)}>
                 <Avatar src="" />
