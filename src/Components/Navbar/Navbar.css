@@ -3,6 +3,7 @@
 }
 .navbar {
   height: 10vh;
+  min-height: 60px;
   width: 100vw;
   padding: 0;
   margin: 0;
@@ -192,6 +193,7 @@ button > .MuiSvgIcon-root {
   }
   .navbar {
     position: fixed !important;
+    min-height: 50px;
   }
   .nav__logo__container {
     width: 50vw;

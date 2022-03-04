@@ -48,18 +48,19 @@ const FormPage = () => {
     console.log("loading >>>>>>", loading);
   }, [loading]);
   const googleSuccess = async (res) => {
+    console.log("res from google> ", res);
     dispatch(loginUserByGoogle(res));
-   
   };
 
-  const googleError = () => {
-    alert("Google Sign In was unsuccessful. Try again later");
+  const googleError = (err) => {
+    console.log("err> ", err);
+    console.log("Google Sign In was unsuccessful. Try again later");
   };
 
   const responseFacebook = (res) => {
     if (res.id && isFbLoginClicked) {
       dispatch(loginUserByFacebook(res));
-      
+
       setIsFbLoginClicked(false);
     } else {
       console.log("err");
@@ -67,20 +68,18 @@ const FormPage = () => {
   };
 
   const login = () => {
-
     setLoginErrors(loginValidation(loginCredentials));
     setTimeout(() => {
       if (
         Object.keys(loginErrors).length === 0 &&
         loginErrors.constructor === Object
       ) {
-        alert("log in");
+        // alert("log in");
         dispatch(loginUser(loginCredentials));
       }
     }, 100);
   };
   const signup = () => {
-    
     setSignupErrors(signupValidation(signupCredentials));
     setTimeout(() => {
       if (

@@ -19,14 +19,11 @@ const Navbar2 = ({ showLoading }) => {
     window.location.pathname.split("/")[1]
   );
   const dispatch = useDispatch();
-  useEffect(() => {
- 
-  }, [window.location.pathname, currentUser]);
+  useEffect(() => {}, [window.location.pathname, currentUser]);
   useEffect(
     () => setCurrentPath(window.location.pathname.split("/")[1]),
     [window.location.pathname]
   );
-
 
   return (
     <>
@@ -70,17 +67,17 @@ const Navbar2 = ({ showLoading }) => {
                 </li>
               </ul>
             </div>
-            <div
-              className="nav__login__container"
-              onClick={dispatch(logoutUser)}
-            >
+            <div className="nav__login__container">
               <a href={currentUser?.profile ? currentUser?.profile : "#"}>
                 <Avatar src={currentUser?.profile}>
                   {!currentUser?.profile && currentUser?.name[0]}
                 </Avatar>
               </a>
 
-              <h3> {currentUser?.id ? "Logout" : "Login"}</h3>
+              <h3 onClick={dispatch(logoutUser)}>
+                {" "}
+                {currentUser?.id ? "Logout" : "Login"}
+              </h3>
             </div>
             <IconButton
               className="nav__icon"
@@ -102,15 +99,15 @@ const Navbar2 = ({ showLoading }) => {
             >
               <ul>
                 <li>
-                  <a href="/search-raffles">Search Raffles</a>
+                  <NavLink to="/search-raffles">Search Raffles</NavLink>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="#"
                     onClick={() => setShowHostRaffleMenu(!showHostRaffleMenu)}
                   >
                     Host a Raffle
-                  </a>
+                  </NavLink>
                   <ArrowDropDownOutlinedIcon />
                 </li>
 
@@ -122,30 +119,30 @@ const Navbar2 = ({ showLoading }) => {
                   }
                 >
                   <li>
-                    <a href="/host-raffle/create">Create Raffle</a>
+                    <NavLink to="/host-raffle/create">Create Raffle</NavLink>
                   </li>
                   <li>
-                    <a href="/host-raffle/live">Live Raffles</a>
+                    <NavLink to="/host-raffle/live">Live Raffles</NavLink>
                   </li>
                   <li>
-                    <a href="/host-raffle/pending">Pending Raffles</a>
+                    <NavLink to="/host-raffle/pending">Pending Raffles</NavLink>
                   </li>
                   <li>
-                    <a href="/host-raffle/ended">Ended Raffles</a>
+                    <NavLink to="/host-raffle/ended">Ended Raffles</NavLink>
                   </li>
                 </div>
 
                 <li>
-                  <a href="/winners">Winners</a>
+                  <NavLink to="/winners">Winners</NavLink>
                 </li>
                 <li>
-                  <a href="/account">Account</a>
+                  <NavLink to="/account">Account</NavLink>
                 </li>
                 <li>
-                  <a href="/tickets">Tickets</a>
+                  <NavLink to="/tickets">Tickets</NavLink>
                 </li>
                 <li>
-                  <a href="/about">About</a>
+                  <NavLink to="/about">About</NavLink>
                 </li>
               </ul>
               <div onClick={dispatch(logoutUser)}>

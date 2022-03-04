@@ -32,7 +32,7 @@ const Home2 = () => {
             <h3>
               {" "}
               Great Opportunity to <span>win prizes</span> worth thousand of
-              dollors
+              dollars.
             </h3>
             <h6>IALT allow you to create your own raffle and earn money</h6>
             <div className="buttons">
